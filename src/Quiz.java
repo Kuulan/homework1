@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Quiz {
     public static void main(String[] args) {
         System.out.println("Привет! Добро пожаловать в игру, кто хочет стать умненькой булочкой:)");
-        System.out.println("Кто обетает на дне океана?");
+        System.out.println("Кто обитает на дне океана?");
         System.out.println("Варианты ответа:");
         String correctAnswer = "Спанч Боб";
         System.out.println(correctAnswer);

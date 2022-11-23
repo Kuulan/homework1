@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Quiz {
     public static void main(String[] args) {
+        boolean isAbleToContinue = true;
         System.out.println("Привет! Добро пожаловать в игру, кто хочет стать умненькой булочкой:)");
         System.out.println("Кто обитает на дне океана?");
         System.out.println("Варианты ответа:");
@@ -19,33 +20,42 @@ public class Quiz {
         Scanner in = new Scanner(System.in);
         String userAnswerOne = in.nextLine();
 
-        if(Objects.equals(userAnswerOne, correctAnswer)){
-            System.out.println("Ты прикатически умная булочка!");
-            System.out.println("Кто основал пирамиду основных потребностей человека?");
-            System.out.println("Варианты ответа:");
-            String questionTwoOptionOne = "Стив Джобс";
-            System.out.println(questionTwoOptionOne);
-            String questionTwoOptionTwo = "Масло Абраш";
-            System.out.println(questionTwoOptionTwo);
-            String questionTwoCorrectAnswer = "Абрахам Маслоу";
-            System.out.println(questionTwoCorrectAnswer);
-            String questionTwoOptionThree = "Хеопс";
-            System.out.println(questionTwoOptionThree);
-            System.out.println("Ответ:");
-
-           String userAnswerTwo = in.nextLine();
-
-            if(Objects.equals(userAnswerTwo, questionTwoCorrectAnswer)){
-                System.out.println("Ты умная булочка!");
-            } else {
-                System.out.println("Ой, ты проиграл, начни сначала!");
-            }
-
-
+        if (Objects.equals(userAnswerOne, correctAnswer)) {
+            isAbleToContinue = true;
         } else {
+            isAbleToContinue = false;
+        }
+        if (!isAbleToContinue) {
             System.out.println("Ой, ты проиграл, начни сначала!");
+            return;
         }
 
+        System.out.println("Ты прикатически умная булочка!");
+        System.out.println("Кто основал пирамиду основных потребностей человека?");
+        System.out.println("Варианты ответа:");
+        String questionTwoOptionOne = "Стив Джобс";
+        System.out.println(questionTwoOptionOne);
+        String questionTwoOptionTwo = "Масло Абраш";
+        System.out.println(questionTwoOptionTwo);
+        String questionTwoCorrectAnswer = "Абрахам Маслоу";
+        System.out.println(questionTwoCorrectAnswer);
+        String questionTwoOptionThree = "Хеопс";
+        System.out.println(questionTwoOptionThree);
+        System.out.println("Ответ:");
+
+        String userAnswerTwo = in.nextLine();
+
+
+        if (Objects.equals(userAnswerTwo, questionTwoCorrectAnswer)){
+            isAbleToContinue = true;
+        } else {
+            isAbleToContinue = false;
+        }
+        if (!isAbleToContinue) {
+            System.out.println("Ой, ты проиграл, начни сначала!");
+            return;
+        }
+        System.out.println("Ты умная булочка!");
 
     }
 }
